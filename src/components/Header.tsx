@@ -79,39 +79,6 @@ export default function Header({ onNavigate, activeTab = 'symptoms', onSelectTab
 
         {/* Clean Minimal Desktop Navigation */}
         <nav className="hidden lg:flex items-center space-x-6 text-sm font-medium text-slate-600">
-          <button
-            type="button"
-            onClick={() => handleTabSwitch('rural-care')}
-            className={`flex items-center space-x-1.5 py-1 px-2.5 rounded-lg text-xs font-bold transition-colors ${
-              activeTab === 'rural-care' ? 'text-rose-600 bg-rose-50' : 'hover:text-rose-600'
-            }`}
-          >
-            <HeartHandshake size={15} />
-            <span>{isBn ? 'সাপে কাটা ও ফার্স্ট-এইড' : 'Rural First-Aid'}</span>
-          </button>
-
-          <button
-            type="button"
-            onClick={() => handleTabSwitch('emergency-helpline')}
-            className={`flex items-center space-x-1.5 py-1 px-2.5 rounded-lg text-xs font-bold transition-colors ${
-              activeTab === 'emergency-helpline' ? 'text-teal-600 bg-teal-50' : 'hover:text-teal-600'
-            }`}
-          >
-            <PhoneCall size={15} />
-            <span>{isBn ? '১৬২৬৩ হেল্পলাইন' : '16263 Hotlines'}</span>
-          </button>
-
-          <button
-            type="button"
-            onClick={() => handleTabSwitch('community-clinic')}
-            className={`flex items-center space-x-1.5 py-1 px-2.5 rounded-lg text-xs font-bold transition-colors ${
-              activeTab === 'community-clinic' ? 'text-emerald-700 bg-emerald-50' : 'hover:text-emerald-700'
-            }`}
-          >
-            <Building2 size={15} />
-            <span>{isBn ? 'কমিউনিটি ক্লিনিক' : 'Community Clinic'}</span>
-          </button>
-
           <a 
             href="#how-it-works" 
             onClick={(e) => handleNavClick(e, 'how-it-works')}
@@ -125,6 +92,13 @@ export default function Header({ onNavigate, activeTab = 'symptoms', onSelectTab
             className="text-xs font-semibold hover:text-teal-600 transition-colors"
           >
             {isBn ? 'নিরাপত্তা' : 'Safety'}
+          </a>
+          <a 
+            href="#about" 
+            onClick={(e) => handleNavClick(e, 'about')}
+            className="text-xs font-semibold hover:text-teal-600 transition-colors"
+          >
+            {isBn ? 'আমাদের সম্পর্কে' : 'About'}
           </a>
         </nav>
 
