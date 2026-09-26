@@ -73,14 +73,14 @@ export default function RecentSearches({
 
   if (searches.length === 0) {
     return (
-      <section className="w-full mt-10 p-6 bg-white/70 border border-slate-200/80 rounded-2xl shadow-xs text-center space-y-2">
-        <div className="w-9 h-9 rounded-full bg-slate-100 text-slate-400 flex items-center justify-center mx-auto mb-1">
+      <section className="w-full mt-10 p-6 bg-white/70 dark:bg-slate-900/70 border border-slate-200/80 dark:border-slate-800 rounded-2xl shadow-xs text-center space-y-2 transition-colors">
+        <div className="w-9 h-9 rounded-full bg-slate-100 dark:bg-slate-800 text-slate-400 dark:text-slate-500 flex items-center justify-center mx-auto mb-1">
           <History size={18} />
         </div>
-        <h4 className="text-sm font-semibold text-slate-700">
+        <h4 className="text-sm font-semibold text-slate-700 dark:text-slate-300">
           {isBn ? 'কোনো সাম্প্রতিক অনুসন্ধান নেই' : 'No Recent Searches'}
         </h4>
-        <p className="text-xs text-slate-500 max-w-md mx-auto leading-relaxed">
+        <p className="text-xs text-slate-500 dark:text-slate-400 max-w-md mx-auto leading-relaxed">
           {isBn
             ? 'আপনার শেষ ৩টি স্বাস্থ্য সমস্যা অনুসন্ধান ও এআই ফলাফল দ্রুত রেফারেন্সের জন্য এখানে স্বয়ংক্রিয়ভাবে সংরক্ষিত হবে।'
             : 'Your last 3 health concern queries and AI analysis results will automatically appear here for quick reference.'}
@@ -90,23 +90,23 @@ export default function RecentSearches({
   }
 
   return (
-    <section className="w-full mt-12 bg-white rounded-2xl border border-slate-200 shadow-sm overflow-hidden animate-in fade-in slide-in-from-bottom-3 duration-400">
+    <section className="w-full mt-12 bg-white dark:bg-slate-900 rounded-2xl border border-slate-200 dark:border-slate-800 shadow-sm overflow-hidden animate-in fade-in slide-in-from-bottom-3 duration-400 transition-colors">
       {/* Card Header */}
-      <div className="p-5 md:px-6 md:py-4 border-b border-slate-100 flex items-center justify-between bg-slate-50/70">
+      <div className="p-5 md:px-6 md:py-4 border-b border-slate-100 dark:border-slate-800 flex items-center justify-between bg-slate-50/70 dark:bg-slate-950/50">
         <div className="flex items-center space-x-2.5">
-          <div className="w-8 h-8 rounded-lg bg-teal-100 text-teal-800 flex items-center justify-center">
+          <div className="w-8 h-8 rounded-lg bg-teal-100 dark:bg-teal-950 text-teal-800 dark:text-teal-300 flex items-center justify-center">
             <History size={16} />
           </div>
           <div>
             <div className="flex items-center space-x-2">
-              <h3 className="text-base font-bold text-slate-900">
+              <h3 className="text-base font-bold text-slate-900 dark:text-white">
                 {isBn ? 'সাম্প্রতিক অনুসন্ধান' : 'Recent Searches'}
               </h3>
-              <span className="px-2 py-0.5 rounded-full text-[11px] font-semibold bg-slate-200/80 text-slate-700">
+              <span className="px-2 py-0.5 rounded-full text-[11px] font-semibold bg-slate-200/80 dark:bg-slate-800 text-slate-700 dark:text-slate-300">
                 {searches.length}/3
               </span>
             </div>
-            <p className="text-xs text-slate-500">
+            <p className="text-xs text-slate-500 dark:text-slate-400">
               {isBn 
                 ? 'দ্রুত রেফারেন্সের জন্য সংরক্ষিত শেষ ৩টি বিশ্লেষণ'
                 : 'Last 3 analyses saved locally for quick reference'}
@@ -116,7 +116,7 @@ export default function RecentSearches({
 
         <button
           onClick={onClearAll}
-          className="flex items-center space-x-1.5 px-3 py-1.5 text-xs font-medium text-slate-500 hover:text-rose-600 hover:bg-rose-50 rounded-lg transition-colors border border-transparent hover:border-rose-100"
+          className="flex items-center space-x-1.5 px-3 py-1.5 text-xs font-medium text-slate-500 dark:text-slate-400 hover:text-rose-600 dark:hover:text-rose-400 hover:bg-rose-50 dark:hover:bg-rose-950/40 rounded-lg transition-colors border border-transparent hover:border-rose-100 dark:hover:border-rose-900/50"
           title={isBn ? 'সব সাম্প্রতিক অনুসন্ধান মুছুন' : 'Clear all recent searches'}
         >
           <Trash2 size={13} />
@@ -125,7 +125,7 @@ export default function RecentSearches({
       </div>
 
       {/* List of last 3 searches */}
-      <div className="divide-y divide-slate-100">
+      <div className="divide-y divide-slate-100 dark:divide-slate-800">
         {searches.map((item) => {
           const badge = getSafetyBadge(item.result.safetyLevel, isBn);
           const firstSpecialist = item.result.suggestedSpecialists[0];
@@ -133,7 +133,7 @@ export default function RecentSearches({
           return (
             <div
               key={item.id}
-              className="p-5 hover:bg-slate-50/80 transition-colors group relative flex flex-col sm:flex-row sm:items-center justify-between gap-4 cursor-pointer"
+              className="p-5 hover:bg-slate-50/80 dark:hover:bg-slate-800/60 transition-colors group relative flex flex-col sm:flex-row sm:items-center justify-between gap-4 cursor-pointer"
               onClick={() => {
                 if ('vibrate' in navigator) navigator.vibrate(30);
                 onSelectSearch(item);
@@ -147,26 +147,26 @@ export default function RecentSearches({
                   </span>
 
                   {firstSpecialist && (
-                    <span className="inline-flex items-center space-x-1 px-2 py-0.5 rounded-md text-[11px] font-medium bg-slate-100 text-slate-700">
-                      <UserRound size={11} className="text-slate-500" />
+                    <span className="inline-flex items-center space-x-1 px-2 py-0.5 rounded-md text-[11px] font-medium bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300">
+                      <UserRound size={11} className="text-slate-500 dark:text-slate-400" />
                       <span>{firstSpecialist.name}</span>
                     </span>
                   )}
 
-                  <span className="text-[11px] text-slate-400 flex items-center space-x-1">
+                  <span className="text-[11px] text-slate-400 dark:text-slate-500 flex items-center space-x-1">
                     <Clock size={11} />
                     <span>{formatTimeAgo(item.timestamp, isBn)}</span>
                   </span>
                 </div>
 
                 {/* Query Title */}
-                <h4 className="text-sm font-semibold text-slate-900 group-hover:text-teal-700 transition-colors line-clamp-2">
+                <h4 className="text-sm font-semibold text-slate-900 dark:text-white group-hover:text-teal-700 dark:group-hover:text-teal-300 transition-colors line-clamp-2">
                   "{item.query}"
                 </h4>
 
                 {/* Snippet */}
                 {item.result.summary && (
-                  <p className="text-xs text-slate-500 line-clamp-1">
+                  <p className="text-xs text-slate-500 dark:text-slate-400 line-clamp-1">
                     {item.result.summary}
                   </p>
                 )}
@@ -180,13 +180,13 @@ export default function RecentSearches({
                     e.stopPropagation();
                     onRemoveSearch(item.id);
                   }}
-                  className="p-1.5 text-slate-400 hover:text-rose-600 hover:bg-rose-50 rounded-lg transition-colors"
+                  className="p-1.5 text-slate-400 hover:text-rose-600 dark:hover:text-rose-400 hover:bg-rose-50 dark:hover:bg-rose-950/40 rounded-lg transition-colors"
                   title={isBn ? 'এই অনুসন্ধানটি মুছুন' : 'Remove search'}
                 >
                   <X size={15} />
                 </button>
 
-                <div className="inline-flex items-center space-x-1.5 px-3.5 py-1.5 bg-teal-50 group-hover:bg-teal-600 text-teal-700 group-hover:text-white rounded-xl text-xs font-semibold transition-all shadow-2xs">
+                <div className="inline-flex items-center space-x-1.5 px-3.5 py-1.5 bg-teal-50 dark:bg-teal-950/60 group-hover:bg-teal-600 text-teal-700 dark:text-teal-300 group-hover:text-white rounded-xl text-xs font-semibold transition-all shadow-2xs">
                   <span>{isBn ? 'ফলাফল দেখুন' : 'View Analysis'}</span>
                   <ArrowRight size={13} />
                 </div>

@@ -47,12 +47,12 @@ export default function FAQ() {
   const isBn = language === 'bn';
 
   return (
-    <section id="faq" className="w-full mt-20 pt-10 border-t border-slate-200 scroll-mt-24">
+    <section id="faq" className="w-full mt-20 pt-10 border-t border-slate-200 dark:border-slate-800 scroll-mt-24">
       <div className="text-center mb-10">
-        <h3 className="text-2xl font-bold text-slate-900">
+        <h3 className="text-2xl font-bold text-slate-900 dark:text-white">
           {isBn ? 'সচরাচর জিজ্ঞাসিত প্রশ্ন' : 'Frequently Asked Questions'}
         </h3>
-        <p className="text-slate-500 mt-2">
+        <p className="text-slate-500 dark:text-slate-400 mt-2">
           {isBn ? 'এআই স্পেশালিস্ট গাইড কীভাবে কাজ করে সে সম্পর্কে আরও জানুন' : 'Learn more about how the AI Specialist Guide works'}
         </p>
       </div>
@@ -62,25 +62,33 @@ export default function FAQ() {
           return (
             <div 
               key={idx} 
-              className={`border border-slate-200 rounded-2xl overflow-hidden transition-colors duration-200 ${isOpen ? 'bg-white shadow-sm border-teal-200' : 'bg-slate-50 hover:bg-white'}`}
+              className={`border border-slate-200 dark:border-slate-800 rounded-2xl overflow-hidden transition-colors duration-200 ${
+                isOpen 
+                  ? 'bg-white dark:bg-slate-900 shadow-sm border-teal-200 dark:border-teal-800/80' 
+                  : 'bg-slate-50 dark:bg-slate-900/50 hover:bg-white dark:hover:bg-slate-900'
+              }`}
             >
               <button
                 onClick={() => setOpenIndex(isOpen ? null : idx)}
-                className="w-full px-6 py-4 flex items-center justify-between focus:outline-none"
+                className="w-full px-6 py-4 flex items-center justify-between focus:outline-none text-left"
               >
                 <div className="text-left pr-4">
-                  <h4 className="font-semibold text-slate-900 leading-tight">
+                  <h4 className="font-semibold text-slate-900 dark:text-white leading-tight">
                     {isBn ? faq.questionBn : faq.question}
                   </h4>
                 </div>
-                <div className={`p-2 rounded-full transition-colors shrink-0 ${isOpen ? 'bg-teal-50 text-teal-600' : 'bg-slate-100 text-slate-400'}`}>
+                <div className={`p-2 rounded-full transition-colors shrink-0 ${
+                  isOpen 
+                    ? 'bg-teal-50 dark:bg-teal-950/60 text-teal-600 dark:text-teal-400' 
+                    : 'bg-slate-100 dark:bg-slate-800 text-slate-400 dark:text-slate-500'
+                }`}>
                   {isOpen ? <ChevronUp size={18} /> : <ChevronDown size={18} />}
                 </div>
               </button>
               
               {isOpen && (
-                <div className="px-6 pb-5 pt-2 border-t border-slate-100 animate-in fade-in slide-in-from-top-2 duration-300">
-                  <p className="text-slate-700 leading-relaxed text-sm md:text-base">
+                <div className="px-6 pb-5 pt-2 border-t border-slate-100 dark:border-slate-800 animate-in fade-in slide-in-from-top-2 duration-300">
+                  <p className="text-slate-700 dark:text-slate-300 leading-relaxed text-sm md:text-base">
                     {isBn ? faq.answerBn : faq.answer}
                   </p>
                 </div>

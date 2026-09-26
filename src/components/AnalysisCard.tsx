@@ -232,20 +232,20 @@ export default function AnalysisCard({ onResult, isLoading, setIsLoading }: Anal
   };
 
   return (
-    <div className="bg-white rounded-2xl shadow-sm border border-slate-200 overflow-hidden">
+    <div className="bg-white dark:bg-slate-900 rounded-2xl shadow-sm border border-slate-200 dark:border-slate-800 overflow-hidden transition-colors duration-200">
       <div className="p-6 md:p-8 space-y-6">
         <div className="space-y-2">
           {isBn ? (
             <>
-              <h3 className="text-xl font-bold text-slate-900">আপনার কী সমস্যা হচ্ছে?</h3>
-              <p className="text-sm text-slate-500 mt-2">
+              <h3 className="text-xl font-bold text-slate-900 dark:text-white">আপনার কী সমস্যা হচ্ছে?</h3>
+              <p className="text-sm text-slate-500 dark:text-slate-400 mt-2">
                 আপনার লক্ষণ বা স্বাস্থ্য সমস্যা সম্পর্কে যতখানি সম্ভব বিস্তারিতভাবে জানান।
               </p>
             </>
           ) : (
             <>
-              <h3 className="text-xl font-bold text-slate-900">Tell Us What You're Experiencing</h3>
-              <p className="text-sm text-slate-500 mt-2">
+              <h3 className="text-xl font-bold text-slate-900 dark:text-white">Tell Us What You're Experiencing</h3>
+              <p className="text-sm text-slate-500 dark:text-slate-400 mt-2">
                 Describe your symptoms or health concern in as much detail as you are comfortable sharing.
               </p>
             </>
@@ -257,13 +257,13 @@ export default function AnalysisCard({ onResult, isLoading, setIsLoading }: Anal
             value={text}
             onChange={(e) => setText(e.target.value)}
             disabled={isLoading || isRecording || isTranscribing}
-            className="w-full h-32 md:h-40 p-4 bg-slate-50 border border-slate-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-teal-500/50 focus:border-teal-500 resize-none transition-all placeholder:text-slate-400"
+            className="w-full h-32 md:h-40 p-4 bg-slate-50 dark:bg-slate-950/80 border border-slate-200 dark:border-slate-800 text-slate-900 dark:text-slate-100 rounded-xl focus:outline-none focus:ring-2 focus:ring-teal-500/50 focus:border-teal-500 resize-none transition-all placeholder:text-slate-400 dark:placeholder:text-slate-500"
             placeholder={isBn ? "উদাহরণ: আমি কয়েকদিন ধরে তীব্র ক্লান্তি ও মাথা ঘোরা অনুভব করছি।" : "Example: I have been feeling intense dizziness and fatigue for several days."}
           />
 
           {/* Quick Rural Symptom Examples Chips */}
           <div className="space-y-1.5">
-            <span className="text-xs font-semibold text-slate-500 flex items-center gap-1">
+            <span className="text-xs font-semibold text-slate-500 dark:text-slate-400 flex items-center gap-1">
               <span>💡 {isBn ? 'সাধারণ সমস্যা বা নমুনা লক্ষণ (ট্যাপ করুন):' : 'Common health symptoms (Tap to test):'}</span>
             </span>
             <div className="flex flex-wrap gap-1.5">
@@ -293,7 +293,7 @@ export default function AnalysisCard({ onResult, isLoading, setIsLoading }: Anal
                   key={idx}
                   type="button"
                   onClick={() => setText(isBn ? chip.bn : chip.en)}
-                  className="px-2.5 py-1 rounded-lg bg-slate-100 hover:bg-teal-50 hover:text-teal-800 text-[11px] sm:text-xs text-slate-600 border border-slate-200/80 transition-colors text-left"
+                  className="px-2.5 py-1 rounded-lg bg-slate-100 dark:bg-slate-800/90 hover:bg-teal-50 dark:hover:bg-teal-950/50 hover:text-teal-800 dark:hover:text-teal-300 text-[11px] sm:text-xs text-slate-600 dark:text-slate-300 border border-slate-200/80 dark:border-slate-700/80 transition-colors text-left"
                 >
                   {isBn ? chip.bn : chip.en}
                 </button>
@@ -309,8 +309,8 @@ export default function AnalysisCard({ onResult, isLoading, setIsLoading }: Anal
                 disabled={isLoading || isTranscribing}
                 className={`flex items-center space-x-2 px-4 py-2 rounded-full border text-sm font-medium transition-colors ${
                   isRecording 
-                    ? 'bg-rose-50 border-rose-200 text-rose-600 animate-pulse' 
-                    : 'bg-white border-slate-200 text-slate-700 hover:bg-slate-50'
+                    ? 'bg-rose-50 dark:bg-rose-950/50 border-rose-200 dark:border-rose-800 text-rose-600 dark:text-rose-400 animate-pulse' 
+                    : 'bg-white dark:bg-slate-800 border-slate-200 dark:border-slate-700 text-slate-700 dark:text-slate-200 hover:bg-slate-50 dark:hover:bg-slate-700'
                 } disabled:opacity-50`}
               >
                 <Mic size={16} />
@@ -321,7 +321,7 @@ export default function AnalysisCard({ onResult, isLoading, setIsLoading }: Anal
                 type="button"
                 onClick={() => fileInputRef.current?.click()}
                 disabled={isLoading || !!image}
-                className="flex items-center space-x-2 px-4 py-2 rounded-full border border-slate-200 bg-white text-slate-700 text-sm font-medium hover:bg-slate-50 transition-colors disabled:opacity-50"
+                className="flex items-center space-x-2 px-4 py-2 rounded-full border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 text-slate-700 dark:text-slate-200 text-sm font-medium hover:bg-slate-50 dark:hover:bg-slate-700 transition-colors disabled:opacity-50"
               >
                 <ImageIcon size={16} />
                 <span className="hidden sm:inline">{isBn ? 'ছবি যুক্ত করুন (ঐচ্ছিক)' : 'Add optional image'}</span>
@@ -337,7 +337,7 @@ export default function AnalysisCard({ onResult, isLoading, setIsLoading }: Anal
             </div>
             
             {(isTranscribing) && (
-              <div className="flex items-center space-x-2 text-sm text-teal-600 font-medium">
+              <div className="flex items-center space-x-2 text-sm text-teal-600 dark:text-teal-400 font-medium">
                 <Loader2 size={16} className="animate-spin" />
                 <span>{isBn ? 'ট্রান্সক্রাইব করা হচ্ছে...' : 'Transcribing...'}</span>
               </div>
@@ -346,11 +346,11 @@ export default function AnalysisCard({ onResult, isLoading, setIsLoading }: Anal
 
           {previewUrl && (
             <div className="relative inline-block mt-4">
-              <img src={previewUrl} alt="Preview" className="h-24 w-24 object-cover rounded-lg border border-slate-200" />
+              <img src={previewUrl} alt="Preview" className="h-24 w-24 object-cover rounded-lg border border-slate-200 dark:border-slate-700" />
               <button
                 type="button"
                 onClick={removeImage}
-                className="absolute -top-2 -right-2 bg-white rounded-full shadow-sm border border-slate-200 p-1 text-slate-500 hover:text-rose-500"
+                className="absolute -top-2 -right-2 bg-white dark:bg-slate-800 rounded-full shadow-sm border border-slate-200 dark:border-slate-700 p-1 text-slate-500 dark:text-slate-400 hover:text-rose-500"
               >
                 <X size={14} />
               </button>
@@ -368,7 +368,7 @@ export default function AnalysisCard({ onResult, isLoading, setIsLoading }: Anal
           )}
 
           {error && (
-            <div className="flex items-start space-x-2 text-rose-600 bg-rose-50 p-3 rounded-lg text-sm">
+            <div className="flex items-start space-x-2 text-rose-600 dark:text-rose-400 bg-rose-50 dark:bg-rose-950/40 p-3 rounded-lg text-sm border border-rose-200 dark:border-rose-900/60">
               <AlertCircle size={16} className="shrink-0 mt-0.5" />
               <span>{error}</span>
             </div>
@@ -376,9 +376,9 @@ export default function AnalysisCard({ onResult, isLoading, setIsLoading }: Anal
         </div>
       </div>
 
-      <div className="bg-slate-50 p-5 md:p-6 border-t border-slate-200 flex flex-col md:flex-row items-center justify-between gap-4">
+      <div className="bg-slate-50 dark:bg-slate-950/60 p-5 md:p-6 border-t border-slate-200 dark:border-slate-800 flex flex-col md:flex-row items-center justify-between gap-4">
         <div className="flex flex-col sm:flex-row items-start sm:items-center gap-3 w-full md:w-auto">
-          <p className="text-xs text-slate-500 leading-relaxed max-w-sm">
+          <p className="text-xs text-slate-500 dark:text-slate-400 leading-relaxed max-w-sm">
             {isBn 
               ? 'আপনার দেওয়া তথ্য নির্দেশনা তৈরির জন্য ব্যবহার করা হয় এবং এটি কোনো চিকিৎসা রেকর্ড হিসেবে সংরক্ষিত নয়।'
               : 'Your information is used to generate guidance and should not be treated as a medical record.'}
@@ -387,8 +387,8 @@ export default function AnalysisCard({ onResult, isLoading, setIsLoading }: Anal
 
         <div className="flex flex-wrap items-center justify-end gap-3 w-full md:w-auto">
           {/* AI Engine Switcher */}
-          <div className="inline-flex items-center p-1 rounded-full bg-white border border-slate-200 shadow-2xs text-xs font-semibold">
-            <span className="text-[11px] text-slate-500 px-2 font-medium hidden sm:inline">
+          <div className="inline-flex items-center p-1 rounded-full bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 shadow-2xs text-xs font-semibold">
+            <span className="text-[11px] text-slate-500 dark:text-slate-400 px-2 font-medium hidden sm:inline">
               {isBn ? 'ইঞ্জিন:' : 'Engine:'}
             </span>
             <button
@@ -397,7 +397,7 @@ export default function AnalysisCard({ onResult, isLoading, setIsLoading }: Anal
               className={`px-2.5 py-1 rounded-full transition-all text-xs ${
                 preferredEngine === 'auto'
                   ? 'bg-teal-600 text-white shadow-2xs font-bold'
-                  : 'text-slate-500 hover:text-slate-800'
+                  : 'text-slate-500 dark:text-slate-400 hover:text-slate-800 dark:hover:text-slate-200'
               }`}
               title={isBn ? "স্মার্ট অটো-ব্যালেন্স (ডুয়েল ইঞ্জিন)" : "Smart Auto Failover"}
             >
@@ -409,7 +409,7 @@ export default function AnalysisCard({ onResult, isLoading, setIsLoading }: Anal
               className={`px-2.5 py-1 rounded-full transition-all text-xs flex items-center space-x-1 ${
                 preferredEngine === 'groq'
                   ? 'bg-emerald-600 text-white shadow-2xs font-bold'
-                  : 'text-slate-500 hover:text-emerald-700'
+                  : 'text-slate-500 dark:text-slate-400 hover:text-emerald-700 dark:hover:text-emerald-300'
               }`}
               title="Groq LPU Ultra Fast Clinical Reasoning"
             >
@@ -421,7 +421,7 @@ export default function AnalysisCard({ onResult, isLoading, setIsLoading }: Anal
               className={`px-2.5 py-1 rounded-full transition-all text-xs ${
                 preferredEngine === 'gemini'
                   ? 'bg-blue-600 text-white shadow-2xs font-bold'
-                  : 'text-slate-500 hover:text-blue-700'
+                  : 'text-slate-500 dark:text-slate-400 hover:text-blue-700 dark:hover:text-blue-300'
               }`}
               title="Google Gemini 3.8 Multimodal"
             >
@@ -432,7 +432,7 @@ export default function AnalysisCard({ onResult, isLoading, setIsLoading }: Anal
           <button
             onClick={handleSubmit}
             disabled={isLoading || isRecording || isTranscribing || !text.trim()}
-            className="w-full sm:w-auto px-6 py-2.5 bg-teal-600 hover:bg-teal-700 text-white rounded-full font-semibold shadow-sm hover:shadow-md transition-all disabled:opacity-50 disabled:pointer-events-none flex items-center justify-center space-x-2 text-sm"
+            className="w-full sm:w-auto px-6 py-2.5 bg-teal-600 hover:bg-teal-700 dark:bg-teal-500 dark:hover:bg-teal-600 text-white rounded-full font-semibold shadow-sm hover:shadow-md transition-all disabled:opacity-50 disabled:pointer-events-none flex items-center justify-center space-x-2 text-sm"
           >
             {isLoading ? (
               <>

@@ -111,11 +111,11 @@ export default function App() {
   const isAnyLoading = isLoading || isPrescriptionLoading || isLabLoading;
 
   return (
-    <div className="min-h-screen flex flex-col bg-slate-50 text-slate-900 font-sans selection:bg-teal-100 selection:text-teal-900 relative overflow-hidden">
+    <div className="min-h-screen flex flex-col bg-slate-50 dark:bg-slate-950 text-slate-900 dark:text-slate-100 font-sans selection:bg-teal-100 dark:selection:bg-teal-900 selection:text-teal-900 dark:selection:text-teal-100 relative overflow-hidden transition-colors duration-200">
       {/* Subtle abstract background element */}
       <div className="absolute top-0 left-0 w-full h-full overflow-hidden pointer-events-none z-0">
-        <div className="absolute -top-40 -right-40 w-96 h-96 bg-cyan-100/40 rounded-full blur-3xl opacity-50"></div>
-        <div className="absolute top-40 -left-20 w-80 h-80 bg-teal-100/40 rounded-full blur-3xl opacity-50"></div>
+        <div className="absolute -top-40 -right-40 w-96 h-96 bg-cyan-100/40 dark:bg-cyan-950/30 rounded-full blur-3xl opacity-50"></div>
+        <div className="absolute top-40 -left-20 w-80 h-80 bg-teal-100/40 dark:bg-teal-950/30 rounded-full blur-3xl opacity-50"></div>
       </div>
       
       <div className="relative z-10 flex-grow flex flex-col w-full h-full">
@@ -137,17 +137,17 @@ export default function App() {
 
                 {/* Feature Mode Switcher Bar */}
                 <div className="w-full flex justify-center">
-                  <div className="inline-flex p-1.5 rounded-2xl bg-slate-100/90 border border-slate-200/80 shadow-2xs flex-wrap justify-center gap-1 max-w-full">
+                  <div className="inline-flex p-1.5 rounded-2xl bg-slate-100/90 dark:bg-slate-900/90 border border-slate-200/80 dark:border-slate-800 shadow-2xs flex-wrap justify-center gap-1 max-w-full">
                     <button
                       type="button"
                       onClick={() => handleTabChange('symptoms')}
                       className={`flex items-center space-x-1.5 px-3.5 py-2 rounded-xl text-xs sm:text-sm font-semibold transition-all ${
                         activeTab === 'symptoms'
-                          ? 'bg-white text-teal-800 shadow-xs border border-slate-200/80 font-bold'
-                          : 'text-slate-600 hover:text-slate-900 hover:bg-white/60'
+                          ? 'bg-white dark:bg-slate-800 text-teal-800 dark:text-teal-300 shadow-xs border border-slate-200/80 dark:border-slate-700 font-bold'
+                          : 'text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-slate-100 hover:bg-white/60 dark:hover:bg-slate-800/60'
                       }`}
                     >
-                      <Activity size={15} className={activeTab === 'symptoms' ? 'text-teal-600' : 'text-slate-500'} />
+                      <Activity size={15} className={activeTab === 'symptoms' ? 'text-teal-600 dark:text-teal-400' : 'text-slate-500 dark:text-slate-400'} />
                       <span>{isBn ? 'লক্ষণ নির্দেশক' : 'Symptom Guide'}</span>
                     </button>
 
@@ -156,11 +156,11 @@ export default function App() {
                       onClick={() => handleTabChange('prescription')}
                       className={`flex items-center space-x-1.5 px-3.5 py-2 rounded-xl text-xs sm:text-sm font-semibold transition-all ${
                         activeTab === 'prescription'
-                          ? 'bg-white text-teal-800 shadow-xs border border-slate-200/80 font-bold'
-                          : 'text-slate-600 hover:text-slate-900 hover:bg-white/60'
+                          ? 'bg-white dark:bg-slate-800 text-teal-800 dark:text-teal-300 shadow-xs border border-slate-200/80 dark:border-slate-700 font-bold'
+                          : 'text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-slate-100 hover:bg-white/60 dark:hover:bg-slate-800/60'
                       }`}
                     >
-                      <FileText size={15} className={activeTab === 'prescription' ? 'text-teal-600' : 'text-slate-500'} />
+                      <FileText size={15} className={activeTab === 'prescription' ? 'text-teal-600 dark:text-teal-400' : 'text-slate-500 dark:text-slate-400'} />
                       <span>{isBn ? 'প্রেসক্রিপশন' : 'Prescription'}</span>
                     </button>
 
@@ -169,11 +169,11 @@ export default function App() {
                       onClick={() => handleTabChange('lab-report')}
                       className={`flex items-center space-x-1.5 px-3.5 py-2 rounded-xl text-xs sm:text-sm font-semibold transition-all ${
                         activeTab === 'lab-report'
-                          ? 'bg-white text-teal-800 shadow-xs border border-slate-200/80 font-bold'
-                          : 'text-slate-600 hover:text-slate-900 hover:bg-white/60'
+                          ? 'bg-white dark:bg-slate-800 text-teal-800 dark:text-teal-300 shadow-xs border border-slate-200/80 dark:border-slate-700 font-bold'
+                          : 'text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-slate-100 hover:bg-white/60 dark:hover:bg-slate-800/60'
                       }`}
                     >
-                      <TestTube size={15} className={activeTab === 'lab-report' ? 'text-teal-600' : 'text-slate-500'} />
+                      <TestTube size={15} className={activeTab === 'lab-report' ? 'text-teal-600 dark:text-teal-400' : 'text-slate-500 dark:text-slate-400'} />
                       <span>{isBn ? 'ল্যাব ডিকোডার' : 'Lab Decoder'}</span>
                     </button>
 
@@ -182,11 +182,11 @@ export default function App() {
                       onClick={() => handleTabChange('drug-safety')}
                       className={`flex items-center space-x-1.5 px-3.5 py-2 rounded-xl text-xs sm:text-sm font-semibold transition-all ${
                         activeTab === 'drug-safety'
-                          ? 'bg-white text-teal-800 shadow-xs border border-slate-200/80 font-bold'
-                          : 'text-slate-600 hover:text-slate-900 hover:bg-white/60'
+                          ? 'bg-white dark:bg-slate-800 text-teal-800 dark:text-teal-300 shadow-xs border border-slate-200/80 dark:border-slate-700 font-bold'
+                          : 'text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-slate-100 hover:bg-white/60 dark:hover:bg-slate-800/60'
                       }`}
                     >
-                      <FlaskConical size={15} className={activeTab === 'drug-safety' ? 'text-teal-600' : 'text-slate-500'} />
+                      <FlaskConical size={15} className={activeTab === 'drug-safety' ? 'text-teal-600 dark:text-teal-400' : 'text-slate-500 dark:text-slate-400'} />
                       <span>{isBn ? 'ড্রাগ সেফটি' : 'Drug Safety'}</span>
                     </button>
 
@@ -195,11 +195,11 @@ export default function App() {
                       onClick={() => handleTabChange('rural-care')}
                       className={`flex items-center space-x-1.5 px-3.5 py-2 rounded-xl text-xs sm:text-sm font-semibold transition-all ${
                         activeTab === 'rural-care'
-                          ? 'bg-white text-rose-800 shadow-xs border border-rose-200/80 font-bold'
-                          : 'text-slate-600 hover:text-rose-700 hover:bg-white/60'
+                          ? 'bg-white dark:bg-slate-800 text-rose-800 dark:text-rose-300 shadow-xs border border-rose-200/80 dark:border-rose-900/60 font-bold'
+                          : 'text-slate-600 dark:text-slate-400 hover:text-rose-700 dark:hover:text-rose-300 hover:bg-white/60 dark:hover:bg-slate-800/60'
                       }`}
                     >
-                      <HeartHandshake size={15} className={activeTab === 'rural-care' ? 'text-rose-600' : 'text-slate-500'} />
+                      <HeartHandshake size={15} className={activeTab === 'rural-care' ? 'text-rose-600 dark:text-rose-400' : 'text-slate-500 dark:text-slate-400'} />
                       <span>{isBn ? 'জরুরি ফার্স্ট-এইড' : 'Rural First-Aid'}</span>
                     </button>
 
@@ -208,11 +208,11 @@ export default function App() {
                       onClick={() => handleTabChange('emergency-helpline')}
                       className={`flex items-center space-x-1.5 px-3.5 py-2 rounded-xl text-xs sm:text-sm font-semibold transition-all ${
                         activeTab === 'emergency-helpline'
-                          ? 'bg-white text-teal-900 shadow-xs border border-teal-200/80 font-bold'
-                          : 'text-slate-600 hover:text-teal-800 hover:bg-white/60'
+                          ? 'bg-white dark:bg-slate-800 text-teal-900 dark:text-teal-300 shadow-xs border border-teal-200/80 dark:border-teal-900/60 font-bold'
+                          : 'text-slate-600 dark:text-slate-400 hover:text-teal-800 dark:hover:text-teal-300 hover:bg-white/60 dark:hover:bg-slate-800/60'
                       }`}
                     >
-                      <PhoneCall size={15} className={activeTab === 'emergency-helpline' ? 'text-teal-600' : 'text-slate-500'} />
+                      <PhoneCall size={15} className={activeTab === 'emergency-helpline' ? 'text-teal-600 dark:text-teal-400' : 'text-slate-500 dark:text-slate-400'} />
                       <span>{isBn ? '১৬২৬৩ হেল্পলাইন' : '16263 Hotlines'}</span>
                     </button>
 
@@ -221,11 +221,11 @@ export default function App() {
                       onClick={() => handleTabChange('community-clinic')}
                       className={`flex items-center space-x-1.5 px-3.5 py-2 rounded-xl text-xs sm:text-sm font-semibold transition-all ${
                         activeTab === 'community-clinic'
-                          ? 'bg-white text-emerald-900 shadow-xs border border-emerald-200/80 font-bold'
-                          : 'text-slate-600 hover:text-emerald-800 hover:bg-white/60'
+                          ? 'bg-white dark:bg-slate-800 text-emerald-900 dark:text-emerald-300 shadow-xs border border-emerald-200/80 dark:border-emerald-900/60 font-bold'
+                          : 'text-slate-600 dark:text-slate-400 hover:text-emerald-800 dark:hover:text-emerald-300 hover:bg-white/60 dark:hover:bg-slate-800/60'
                       }`}
                     >
-                      <Building2 size={15} className={activeTab === 'community-clinic' ? 'text-emerald-600' : 'text-slate-500'} />
+                      <Building2 size={15} className={activeTab === 'community-clinic' ? 'text-emerald-600 dark:text-emerald-400' : 'text-slate-500 dark:text-slate-400'} />
                       <span>{isBn ? 'কমিউনিটি ক্লিনিক' : 'Community Clinic'}</span>
                     </button>
 
@@ -234,11 +234,11 @@ export default function App() {
                       onClick={() => handleTabChange('health-calculator')}
                       className={`flex items-center space-x-1.5 px-3.5 py-2 rounded-xl text-xs sm:text-sm font-semibold transition-all ${
                         activeTab === 'health-calculator'
-                          ? 'bg-white text-teal-800 shadow-xs border border-slate-200/80 font-bold'
-                          : 'text-slate-600 hover:text-slate-900 hover:bg-white/60'
+                          ? 'bg-white dark:bg-slate-800 text-teal-800 dark:text-teal-300 shadow-xs border border-slate-200/80 dark:border-slate-700 font-bold'
+                          : 'text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-slate-100 hover:bg-white/60 dark:hover:bg-slate-800/60'
                       }`}
                     >
-                      <Scale size={15} className={activeTab === 'health-calculator' ? 'text-teal-600' : 'text-slate-500'} />
+                      <Scale size={15} className={activeTab === 'health-calculator' ? 'text-teal-600 dark:text-teal-400' : 'text-slate-500 dark:text-slate-400'} />
                       <span>{isBn ? 'ক্যালকুলেটর' : 'Calculator'}</span>
                     </button>
                   </div>
@@ -249,20 +249,20 @@ export default function App() {
                   <div className="text-center space-y-3 pt-2">
                     {isBn ? (
                       <>
-                        <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight text-slate-900 leading-tight">
+                        <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight text-slate-900 dark:text-white leading-tight">
                           আপনার সমস্যাটি বলুন বা লিখুন।<br />সঠিক ডাক্তারের পরামর্শ ও দিকনির্দেশনা পান।
                         </h1>
-                        <p className="text-slate-500 max-w-2xl mx-auto text-sm sm:text-base">
+                        <p className="text-slate-500 dark:text-slate-400 max-w-2xl mx-auto text-sm sm:text-base">
                           বাংলায় ভয়েসে বলুন বা লিখে জানান। ডুয়েল এআই ইঞ্জিন (Gemini + Groq LPU) তাৎক্ষণিক ক্লিনিক্যাল ট্রায়াজ বিশ্লেষণ সম্পন্ন করবে।
                         </p>
                       </>
                     ) : (
                       <>
-                        <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight text-slate-900 leading-tight">
+                        <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight text-slate-900 dark:text-white leading-tight">
                           Understand Your Concern.<br />
                           Know Where to Seek Care.
                         </h1>
-                        <p className="text-slate-500 max-w-2xl mx-auto text-sm sm:text-base">
+                        <p className="text-slate-500 dark:text-slate-400 max-w-2xl mx-auto text-sm sm:text-base">
                           Describe what you are experiencing via voice or text and receive dual AI-powered clinical triage guidance.
                         </p>
                       </>
@@ -272,20 +272,20 @@ export default function App() {
                   <div className="text-center space-y-3 pt-2">
                     {isBn ? (
                       <>
-                        <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight text-slate-900 leading-tight">
+                        <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight text-slate-900 dark:text-white leading-tight">
                           ডাক্তারের প্রেসক্রিপশন পড়ুন সহজে।<br />ওষুধ ও নির্দেশনার নিখুঁত বাংলা রূপান্তর।
                         </h1>
-                        <p className="text-slate-500 max-w-2xl mx-auto text-sm sm:text-base">
+                        <p className="text-slate-500 dark:text-slate-400 max-w-2xl mx-auto text-sm sm:text-base">
                           প্রেসক্রিপশনের ছবি আপলোড করুন। এআই নির্ভুলভাবে ডাক্তারের হাতের লেখা, ওষুধের মাত্রা (ডোজ), খাওয়ার নিয়ম এবং ল্যাব টেস্ট বাংলায় বিশ্লেষণ করবে।
                         </p>
                       </>
                     ) : (
                       <>
-                        <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight text-slate-900 leading-tight">
+                        <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight text-slate-900 dark:text-white leading-tight">
                           Decode Doctor Prescriptions.<br />
                           Clear Bengali Drug & Dosage Translation.
                         </h1>
-                        <p className="text-slate-500 max-w-2xl mx-auto text-sm sm:text-base">
+                        <p className="text-slate-500 dark:text-slate-400 max-w-2xl mx-auto text-sm sm:text-base">
                           Upload or snap a prescription photo. Surokkha AI extracts doctor details, standardizes medicine names, decodes dosages, and translates instructions into empathetic Bengali.
                         </p>
                       </>
@@ -295,20 +295,20 @@ export default function App() {
                   <div className="text-center space-y-3 pt-2">
                     {isBn ? (
                       <>
-                        <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight text-slate-900 leading-tight">
+                        <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight text-slate-900 dark:text-white leading-tight">
                           স্মার্ট ল্যাব ও রক্ত পরীক্ষা ডিকোডার।<br />জটিল মেডিকেল রিপোর্টের সহজ বাংলা বিশ্লেষণ।
                         </h1>
-                        <p className="text-slate-500 max-w-2xl mx-auto text-sm sm:text-base">
+                        <p className="text-slate-500 dark:text-slate-400 max-w-2xl mx-auto text-sm sm:text-base">
                           সিবিসি, সুগার, লিপিড প্রোফাইল বা কিডনি টেস্টের মান আপলোড করুন। এআই প্রতিটি বায়োমার্কারের রেফারেন্স রেঞ্জ, ঝুঁকির মাত্রা ও পরবর্তী পদক্ষেপ সহজ বাংলায় বুঝিয়ে দেবে।
                         </p>
                       </>
                     ) : (
                       <>
-                        <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight text-slate-900 leading-tight">
+                        <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight text-slate-900 dark:text-white leading-tight">
                           Smart Pathology & Lab Report AI.<br />
                           Clinical Biomarker Insights in Plain Language.
                         </h1>
-                        <p className="text-slate-500 max-w-2xl mx-auto text-sm sm:text-base">
+                        <p className="text-slate-500 dark:text-slate-400 max-w-2xl mx-auto text-sm sm:text-base">
                           Scan blood test or pathology sheets to decode biological ranges, abnormal markers, risk levels, and dietary advice.
                         </p>
                       </>
@@ -318,20 +318,20 @@ export default function App() {
                   <div className="text-center space-y-3 pt-2">
                     {isBn ? (
                       <>
-                        <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight text-slate-900 leading-tight">
+                        <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight text-slate-900 dark:text-white leading-tight">
                           ড্রাগ ইন্টারঅ্যাকশন ও সেফটি ম্যাট্রিক্স।<br />ওষুধের ক্ষতিকর প্রতিক্রিয়া থেকে সুরক্ষিত থাকুন।
                         </h1>
-                        <p className="text-slate-500 max-w-2xl mx-auto text-sm sm:text-base">
+                        <p className="text-slate-500 dark:text-slate-400 max-w-2xl mx-auto text-sm sm:text-base">
                           একাধিক ওষুধ একসাথে সেবনের বিপদ, টাইমিং ব্যবধান, খাদ্য সতর্কতা ও কন্ট্রা-ইন্ডিকেশন তাৎক্ষণিক ক্লিনিক্যাল এআই দিয়ে যাচাই করুন।
                         </p>
                       </>
                     ) : (
                       <>
-                        <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight text-slate-900 leading-tight">
+                        <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight text-slate-900 dark:text-white leading-tight">
                           Drug Interaction & Safety Matrix.<br />
                           AI Screening for Safe Medication Combinations.
                         </h1>
-                        <p className="text-slate-500 max-w-2xl mx-auto text-sm sm:text-base">
+                        <p className="text-slate-500 dark:text-slate-400 max-w-2xl mx-auto text-sm sm:text-base">
                           Screen multiple medicines for adverse drug-drug interactions (DDI), absorption conflicts, timing requirements, and dietary contraindications.
                         </p>
                       </>
@@ -341,20 +341,20 @@ export default function App() {
                   <div className="text-center space-y-3 pt-2">
                     {isBn ? (
                       <>
-                        <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight text-slate-900 leading-tight">
+                        <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight text-slate-900 dark:text-white leading-tight">
                           স্মার্ট স্বাস্থ্য ও হাইড্রেশন ক্যালকুলেটর।<br />ক্লিনিক্যাল বিএমআই ও ব্যক্তিগত পানির গাইড।
                         </h1>
-                        <p className="text-slate-500 max-w-2xl mx-auto text-sm sm:text-base">
+                        <p className="text-slate-500 dark:text-slate-400 max-w-2xl mx-auto text-sm sm:text-base">
                           WHO এশিয়ান স্ট্যান্ডার্ড অনুযায়ী আপনার আদর্শ ওজন ও বিএমআই জানুন এবং শারীরিক ওজন, দৈনিক পরিশ্রম ও আবহাওয়ার ওপর ভিত্তি করে আপনার প্রয়োজনীয় পানির সঠিক পরিমাণ হিসাব করুন।
                         </p>
                       </>
                     ) : (
                       <>
-                        <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight text-slate-900 leading-tight">
+                        <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight text-slate-900 dark:text-white leading-tight">
                           Precision Health & Hydration Calculators.<br />
                           Clinical BMI & Daily Water Intake Guidance.
                         </h1>
-                        <p className="text-slate-500 max-w-2xl mx-auto text-sm sm:text-base">
+                        <p className="text-slate-500 dark:text-slate-400 max-w-2xl mx-auto text-sm sm:text-base">
                           Calculate body mass index with South Asian WHO cutoffs and determine personalized daily hydration requirements tailored to weight, climate, and physical exertion.
                         </p>
                       </>

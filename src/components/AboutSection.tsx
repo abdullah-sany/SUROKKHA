@@ -32,14 +32,14 @@ export default function AboutSection() {
     <section id="about" className="w-full scroll-mt-24 space-y-8">
       {/* Section Header */}
       <div className="text-center space-y-3">
-        <div className="inline-flex items-center space-x-1.5 px-3 py-1 rounded-full bg-slate-100 border border-slate-200 text-slate-700 text-xs font-semibold uppercase tracking-wider">
-          <Compass size={13} className="text-teal-600" />
+        <div className="inline-flex items-center space-x-1.5 px-3 py-1 rounded-full bg-slate-100 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 text-slate-700 dark:text-slate-300 text-xs font-semibold uppercase tracking-wider">
+          <Compass size={13} className="text-teal-600 dark:text-teal-400" />
           <span>{isBn ? 'আমাদের লক্ষ্য ও পরিচিতি' : 'Our Story & Purpose'}</span>
         </div>
-        <h2 className="text-2xl md:text-3xl font-bold text-slate-900 tracking-tight">
+        <h2 className="text-2xl md:text-3xl font-bold text-slate-900 dark:text-white tracking-tight">
           {isBn ? 'সুরক্ষা এআই সম্পর্কে' : 'About Surokkha AI'}
         </h2>
-        <p className="text-slate-500 text-sm md:text-base max-w-xl mx-auto leading-relaxed">
+        <p className="text-slate-500 dark:text-slate-400 text-sm md:text-base max-w-xl mx-auto leading-relaxed">
           {isBn
             ? 'সঠিক সময়ে সঠিক ডাক্তারের কাছে পৌঁছানোর পথকে সহজ ও সুলভ করতে আমাদের এই উদ্যোগ।'
             : 'Bridging the critical gap between symptom onset and specialized clinical care with compassionate, intelligent AI.'}
@@ -93,42 +93,42 @@ export default function AboutSection() {
 
       {/* 3 Core Values Bento Grid */}
       <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
-        <div className="bg-white border border-slate-200 rounded-2xl p-6 shadow-xs space-y-3">
-          <div className="w-10 h-10 rounded-xl bg-teal-50 text-teal-700 flex items-center justify-center">
+        <div className="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-2xl p-6 shadow-xs space-y-3">
+          <div className="w-10 h-10 rounded-xl bg-teal-50 dark:bg-teal-950/60 text-teal-700 dark:text-teal-400 flex items-center justify-center">
             <Target size={20} />
           </div>
-          <h4 className="text-base font-bold text-slate-900">
+          <h4 className="text-base font-bold text-slate-900 dark:text-white">
             {isBn ? 'আমাদের ভিশন (Vision)' : 'Our Vision'}
           </h4>
-          <p className="text-xs sm:text-sm text-slate-500 leading-relaxed">
+          <p className="text-xs sm:text-sm text-slate-500 dark:text-slate-400 leading-relaxed">
             {isBn
               ? 'প্রযুক্তি এবং কৃত্রিম বুদ্ধিমত্তার দায়িত্বশীল ব্যবহারের মাধ্যমে স্বাস্থ্যসেবার প্রাথমিক দিকনির্দেশনা প্রতিটি মানুষের হাতের নাগালে পৌঁছে দেওয়া।'
               : 'A world where no individual delays life-saving medical care due to lack of health literacy or confusion over medical departments.'}
           </p>
         </div>
 
-        <div className="bg-white border border-slate-200 rounded-2xl p-6 shadow-xs space-y-3">
-          <div className="w-10 h-10 rounded-xl bg-cyan-50 text-cyan-700 flex items-center justify-center">
+        <div className="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-2xl p-6 shadow-xs space-y-3">
+          <div className="w-10 h-10 rounded-xl bg-cyan-50 dark:bg-cyan-950/60 text-cyan-700 dark:text-cyan-400 flex items-center justify-center">
             <HeartHandshake size={20} />
           </div>
-          <h4 className="text-base font-bold text-slate-900">
+          <h4 className="text-base font-bold text-slate-900 dark:text-white">
             {isBn ? 'আমাদের মূল্যবোধ (Values)' : 'Core Values'}
           </h4>
-          <p className="text-xs sm:text-sm text-slate-500 leading-relaxed">
+          <p className="text-xs sm:text-sm text-slate-500 dark:text-slate-400 leading-relaxed">
             {isBn
               ? 'রোগীর নিরাপত্তা সর্বদা সবার আগে। স্বচ্ছতা, স্পষ্ট মেডিকেল ডিসক্লেইমার এবং তথ্যের সর্বোচ্চ গোপনীয়তা আমাদের অঙ্গীকার।'
               : 'Patient safety is non-negotiable. We maintain total clinical transparency, unyielding privacy, and strict algorithmic accountability.'}
           </p>
         </div>
 
-        <div className="bg-white border border-slate-200 rounded-2xl p-6 shadow-xs space-y-3">
-          <div className="w-10 h-10 rounded-xl bg-emerald-50 text-emerald-700 flex items-center justify-center">
+        <div className="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-2xl p-6 shadow-xs space-y-3">
+          <div className="w-10 h-10 rounded-xl bg-emerald-50 dark:bg-emerald-950/60 text-emerald-700 dark:text-emerald-400 flex items-center justify-center">
             <Globe2 size={20} />
           </div>
-          <h4 className="text-base font-bold text-slate-900">
+          <h4 className="text-base font-bold text-slate-900 dark:text-white">
             {isBn ? 'স্থানীয় পরিপ্রেক্ষিত (Local Impact)' : 'Ecosystem Impact'}
           </h4>
-          <p className="text-xs sm:text-sm text-slate-500 leading-relaxed">
+          <p className="text-xs sm:text-sm text-slate-500 dark:text-slate-400 leading-relaxed">
             {isBn
               ? 'বাংলা ও ইংরেজিতে সহজ ইন্টারফেস, বাংলাদেশের হাসপাতাল ও ইমার্জেন্সি ব্যবস্থার সাথে দ্রুত সমন্বয়ের সুযোগ।'
               : 'Designed with deep contextual relevance for Bangladesh and regional healthcare infrastructures, empowering informed consultations.'}

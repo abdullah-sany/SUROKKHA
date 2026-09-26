@@ -53,14 +53,14 @@ export default function HowItWorks() {
     <section id="how-it-works" className="w-full scroll-mt-24 space-y-8">
       {/* Header */}
       <div className="text-center space-y-3">
-        <div className="inline-flex items-center space-x-1.5 px-3 py-1 rounded-full bg-teal-50 border border-teal-200 text-teal-700 text-xs font-semibold uppercase tracking-wider">
-          <Sparkles size={13} className="text-teal-600" />
+        <div className="inline-flex items-center space-x-1.5 px-3 py-1 rounded-full bg-teal-50 dark:bg-teal-950/40 border border-teal-200 dark:border-teal-800 text-teal-700 dark:text-teal-300 text-xs font-semibold uppercase tracking-wider">
+          <Sparkles size={13} className="text-teal-600 dark:text-teal-400" />
           <span>{isBn ? 'সহজ চার ধাপের প্রক্রিয়া' : 'Step-by-Step Guidance'}</span>
         </div>
-        <h2 className="text-2xl md:text-3xl font-bold text-slate-900 tracking-tight">
+        <h2 className="text-2xl md:text-3xl font-bold text-slate-900 dark:text-white tracking-tight">
           {isBn ? 'সুরক্ষা এআই কীভাবে কাজ করে?' : 'How Surokkha AI Works'}
         </h2>
-        <p className="text-slate-500 text-sm md:text-base max-w-xl mx-auto leading-relaxed">
+        <p className="text-slate-500 dark:text-slate-400 text-sm md:text-base max-w-xl mx-auto leading-relaxed">
           {isBn
             ? 'কোন ডাক্তারের কাছে যাবেন তা নিয়ে দ্বিধায় আছেন? মাত্র কয়েকটি সহজ ধাপে সঠিক স্বাস্থ্য দিকনির্দেশনা পান।'
             : 'Unsure which doctor or department to visit? Navigate your healthcare journey with confidence in four simple steps.'}
@@ -74,33 +74,33 @@ export default function HowItWorks() {
           return (
             <div
               key={index}
-              className="group relative bg-white border border-slate-200 hover:border-teal-300 rounded-2xl p-6 shadow-xs hover:shadow-md transition-all duration-300 flex flex-col justify-between"
+              className="group relative bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 hover:border-teal-300 dark:hover:border-teal-700 rounded-2xl p-6 shadow-xs hover:shadow-md transition-all duration-300 flex flex-col justify-between"
             >
               <div className="space-y-4">
                 <div className="flex items-center justify-between">
-                  <div className="w-12 h-12 rounded-xl bg-teal-50 text-teal-700 group-hover:bg-teal-600 group-hover:text-white transition-colors flex items-center justify-center shadow-2xs">
+                  <div className="w-12 h-12 rounded-xl bg-teal-50 dark:bg-teal-950/60 text-teal-700 dark:text-teal-400 group-hover:bg-teal-600 group-hover:text-white dark:group-hover:bg-teal-600 transition-colors flex items-center justify-center shadow-2xs">
                     <Icon size={22} />
                   </div>
-                  <span className="font-mono text-2xl font-bold text-slate-300 group-hover:text-teal-500/80 transition-colors">
+                  <span className="font-mono text-2xl font-bold text-slate-300 dark:text-slate-700 group-hover:text-teal-500/80 transition-colors">
                     {item.step}
                   </span>
                 </div>
 
                 <div>
-                  <div className="inline-block px-2.5 py-0.5 mb-2 rounded-md bg-slate-100 text-slate-600 text-[11px] font-semibold tracking-wide">
+                  <div className="inline-block px-2.5 py-0.5 mb-2 rounded-md bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300 text-[11px] font-semibold tracking-wide">
                     {isBn ? item.tagBn : item.tagEn}
                   </div>
-                  <h3 className="text-lg font-bold text-slate-900 group-hover:text-teal-800 transition-colors">
+                  <h3 className="text-lg font-bold text-slate-900 dark:text-white group-hover:text-teal-800 dark:group-hover:text-teal-300 transition-colors">
                     {isBn ? item.titleBn : item.titleEn}
                   </h3>
                 </div>
 
-                <p className="text-sm text-slate-500 leading-relaxed">
+                <p className="text-sm text-slate-500 dark:text-slate-400 leading-relaxed">
                   {isBn ? item.descBn : item.descEn}
                 </p>
               </div>
 
-              <div className="pt-4 mt-4 border-t border-slate-100 flex items-center text-xs font-semibold text-teal-600 group-hover:text-teal-700">
+              <div className="pt-4 mt-4 border-t border-slate-100 dark:border-slate-800 flex items-center text-xs font-semibold text-teal-600 dark:text-teal-400 group-hover:text-teal-700 dark:group-hover:text-teal-300">
                 <ShieldCheck size={14} className="mr-1 text-teal-500" />
                 <span>{isBn ? 'রোগী কেন্দ্রিক সুরক্ষা' : 'Evidence-guided triage'}</span>
               </div>
